@@ -24,11 +24,11 @@ app.get('/bacheca', (req, res) => {
         let filteredFood = food.filter((item) => {
             return item.name.toLowerCase().includes(name.toLowerCase());
         })
-        response = {
+        let filteredResponse = {
             totalCount: filteredFood.length,
             data: [...filteredFood]
         }
-        res.json(response);
+        res.json(filteredResponse);
     }else{
         res.json(response);
     }
