@@ -6,7 +6,6 @@ const port = 3000;
 app.use(express.static('public'));
 const food = require('./data/food.js');
 
-console.log(food[1])
 
 app.get('/', (req, res) => {
     res.send('Server del mio Blog!');
