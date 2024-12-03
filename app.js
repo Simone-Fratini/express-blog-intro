@@ -12,7 +12,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/bacheca', (req, res) => {
-    res.json(food);
+
+    let response = {
+        totalCount: food.length,
+        data: [...food]
+    }
+    res.json(response);
 
 })
 
