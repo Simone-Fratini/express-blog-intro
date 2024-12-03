@@ -17,7 +17,21 @@ app.get('/bacheca', (req, res) => {
         totalCount: food.length,
         data: [...food]
     }
-    res.json(response);
+    
+
+    let name = req.query.name;
+    if(name){
+        let filteredFood = food.filter((item) => {
+            return item.name.toLowerCase().includes(name.toLowerCase());
+        })
+        response = {
+            totalCount: filteredFood.length,
+            data: [...filteredFood]
+        }
+        res.json(response);
+    }else{
+        res.json(response);
+    }
 
 })
 
